@@ -40,3 +40,5 @@ Use the following command:
 fcomp <reference_image_path> <target_size_bytes> <decompressed_image_path> <compressed_stream_path> <report_timings>
 
 An example can be found in the `compare_with_jpeg.ipynb` notebook.
+
+This implementation uses STB library https://github.com/nothings/stb/tree/master for loading and saving PNGs
