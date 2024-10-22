@@ -4,8 +4,8 @@ This repository contains an implementation of an efficient fractal compression a
 
 ## Performance
 
-- ~0.2s for 256x256 image
-- ~3.2s for 512x512 image
+- ~0.23s for 256x256 image
+- ~3.8s for 512x512 image
 
 ## How It Works
 
