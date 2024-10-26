@@ -9,6 +9,7 @@ Of course, this is not a production code. It was only a challenge to beat other 
 
 - ~0.23s for 256x256 image
 - ~3.8s for 512x512 image
+  
 Perfmance is practically not affected by compression quality
 ## How It Works
 
