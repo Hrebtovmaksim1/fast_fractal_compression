@@ -13,7 +13,7 @@ Of course, this is not a production code. It was only a challenge to beat other 
 Perfmance is practically not affected by compression quality
 ## How It Works
 
-The algorithm uses a DuoTree structure (different from the usual QuadTree) with block sizes ranging from 2x2 to 32x32. Each block size corresponds to a level, and each block of level N + 1 has two children blocks of level N.
+The algorithm uses a DuoTree structure (similar to QuadTree) with block sizes ranging from 2x2 to 32x32. Each block size corresponds to a level, and each block of level N + 1 has two children blocks of level N.
 
 ### Algorithm Steps
 
