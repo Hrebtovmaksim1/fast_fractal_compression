@@ -76,7 +76,7 @@ inline void updateGroup(const Vec* __restrict__ buf, Vec& __restrict__ errors, I
   Vec cur_errors = errors;
   IVec cur_matches = matches;
   // somehow if these two loops are combined gcc optimizes this poorly and performance drops 4x
-  // that is the only reason
+  // that is the only reason I decided to split these cycles. Why didn't gcc merge them anyway? Looks like a bug
   for (int vpos = 0; vpos < 4; ++vpos) {
     vecArgmin(cur_errors, cur_matches, buf[vpos], update_matches[vpos]);
   }
