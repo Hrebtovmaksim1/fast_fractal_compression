@@ -1,7 +1,7 @@
 # Fractal Image Compression Algorithm
 
-This repository contains an implementation of an efficient fractal compression algorithm. It achieves JPEG-like performance at high compression levels and outperforms JPEG at lower compression levels.
-
+This repository contains an implementation of an efficient fractal compression algorithm. It achieves JPEG-like image-to-quality-ratio at high quality compression and outperforms JPEG at lower quality compression.
+This is the only implementation I was able to find online to actually match jpeg image-quality-to-bpp ratio while holding somewhat reasonable performance (1MBPS for 256 * 256 image)
 ## Performance
 
 - ~0.23s for 256x256 image
