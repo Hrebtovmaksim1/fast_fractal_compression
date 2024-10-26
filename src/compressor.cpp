@@ -80,13 +80,13 @@ void compressImage(const Image& img, const std::string& filepath, int target_siz
 
   auto channels = img.extractChannels();
 
+  int num_base_leafs = img.size().first * img.size().second / kMaxBlockNumel * channels.size();
   int bits_for_leaf = metadata.bits_for_match_idx_ + kBitDepth + 2;  // 2 is for "is leaf block" flags
   int target_size_bits = target_size_bytes * CHAR_BIT;
-
   int num_metadata_bits = kBitsPerShape * 2 + kBitsForNumChannels + channels.size() * kRangeOffset;
-  int target_num_leafs = (target_size_bits - num_metadata_bits) / bits_for_leaf;
-  int min_num_leafs = img.size().first * img.size().second / kMaxBlockNumel * channels.size();
-  target_num_leafs = std::max(target_num_leafs, min_num_leafs);
+  // ... + num_base_leafs to account that we don't serialize a "split" flag for base blocks
+  int target_num_leafs = (target_size_bits - num_metadata_bits + num_base_leafs) / bits_for_leaf;
+  target_num_leafs = std::max(target_num_leafs, num_base_leafs);
   stream.dump(metadata.sz_.first, kBitsPerShape);
   stream.dump(metadata.sz_.second, kBitsPerShape);
   stream.dump(channels.size(), kBitsForNumChannels);
